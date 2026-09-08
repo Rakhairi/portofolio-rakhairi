@@ -15,7 +15,7 @@
             font-family: 'Century Gothic', Arial, sans-serif;
             background-color: aliceblue;
             color: rgb(35, 54, 62);
-            line-height: 1.0;
+            line-height: 1.5; /* Diperbaiki biar jarak antar baris teks gak terlalu rapat */
         }
 
         a {
@@ -53,25 +53,19 @@
         .menu li a:hover {
             color: aquamarine;
         }
-
-        .hero {
-            flex-direction: column-reverse; 
-            height: auto;                   
-            min-height: 100vh;              
-            text-align: center;
-            padding-top: 100px;             
-            gap: 40px;                      
-        }
         
-        .hero img {
-            width: 80%;           
-            max-width: 300px;     
-            height: auto;
+        .hero {
+            display: flex;
+            align-items: center;       
+            justify-content: space-between; 
+            padding: 0 80px;           
+            gap: 50px;                 
+            min-height: 80vh;
         }
 
-        .hero-teks {
-            text-align: left;
-        }
+        .hero-text {
+            max-width: 600px;
+        }        
 
         .hero-teks h1 {
             font-size: 60px;
@@ -80,16 +74,18 @@
         }
 
         .hero-teks h2 {
-            font-size: 30;
+            font-size: 30px; /* Ditambahin 'px' biar valid */
             color: rgb(139, 147, 147);
         }
 
+        /* Foto Profil Versi Laptop / Default */
         .hero-foto {
-            width: 400px;
-            height: 400px;
+            width: 100%;
+            max-width: 350px;
+            height: 350px;
             object-fit: cover;
             border: 5px solid white;
-            border-radius: 50%;
+            border-radius: 50%; /* Bikin fotonya bulat cantik */
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             transition: 0.3s;
         }
@@ -226,7 +222,7 @@
             border-radius: 12px;
             width: 250px;
             text-align: center;
-            transition: 0.3;
+            transition: 0.3s; /* Ditambahin 's' biar transisinya jalan */
             display: inline-block;
         }
 
@@ -249,34 +245,49 @@
             box-shadow: 0 10px 20px rgba(46, 204, 113, 0.15);
             background-color: white;
         }
+
         /* =========================================
-        JURUS RESPONSIVE UNTUK LAYAR HP 
-        ========================================= */
+           JURUS RESPONSIVE UNTUK LAYAR HP 
+           ========================================= */
         @media (max-width: 768px) {
             
-            /* 1. Navbar ditumpuk ke bawah biar menu gak kegencet logo */
             .navbar {
                 flex-direction: column;
                 gap: 15px;
                 padding: 15px 20px;
             }
-        
+            
+            .hero {
+                flex-direction: column-reverse; 
+                height: auto;                  
+                min-height: 100vh;              
+                text-align: center;
+                padding-top: 100px;             
+                gap: 40px;                      
+            }
+            
+            .hero-foto {
+                width: 220px;   /* Dikecilin pas di HP biar pas */
+                height: 220px;
+            }
+
+            .hero-teks {
+                text-align: center; /* Di HP teksnya kita bikin di tengah biar estetik */
+            }
+
             .menu {
-                gap: 15px; /* Jarak antar menu dideketin */
+                gap: 15px; 
                 justify-content: center;
             }
 
-            /* 2. Ukuran teks judul Hero dikecilin biar gak tumpah */
             h1 {
                 font-size: 32px; 
             }
 
-            /* 3. Padding (jarak dalam) di kiri-kanan semua kotak dikecilin */
             section, .contact-area {
                 padding: 50px 20px; 
             }
 
-            /* 4. Kartu Project dan Kontak dibikin ngisi penuh layar HP */
             .kartu-project, .kartu-kontak {
                 width: 100%; 
             }
@@ -293,6 +304,7 @@
             <li><a href="#contact">CONTACT</a></li>
         </ul>
     </nav>
+
     <header id="home" class="hero">
         <div class="hero-teks">
             <p>Halo, selamat datang! Gw</p>
@@ -301,6 +313,7 @@
         </div>
         <img src="https://i.pinimg.com/474x/93/44/40/93444022aabf9ab161e945c579417786.jpg" alt="Foto Profil Gw" class="hero-foto">
     </header>
+
     <section id="skills" class="skills-area">
         <h2 class="judul-section">Pencapaian Gw</h2>
         <div class="wadah-skills">
@@ -318,6 +331,7 @@
             </div>
         </div>
     </section>
+
     <section id="projects" class="projects-area">
         <h2 class="judul-section">Projects</h2>
         <div class="wadah-projects">
@@ -331,6 +345,7 @@
             </div>
         </div>
     </section>
+
     <section id="contact" class="contact-area">
         <h2 class="judul-section">Hubungi Gw</h2>
         <div class="wadah-contact">
