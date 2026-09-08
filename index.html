@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | RAKHAIRI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Century Gothic', Arial, sans-serif;
+            background-color: aliceblue;
+            color: rgb(35, 54, 62);
+            line-height: 1.0;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            color: aqua;
+            font-weight: bold;
+            font-size: 35px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .menu li a {
+            font-weight: bold;
+            color: rgb(31, 56, 63);
+            transition: 0.3s;
+        }
+
+        .menu li a:hover {
+            color: aquamarine;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 100px;
+            min-height: 80vh;
+            padding: 0 50px;
+        }
+        
+        .hero-teks {
+            text-align: left;
+        }
+
+        .hero-teks h1 {
+            font-size: 60px;
+            color: rgb(35, 54, 62);
+            margin: 10px 0;
+        }
+
+        .hero-teks h2 {
+            font-size: 30;
+            color: rgb(139, 147, 147);
+        }
+
+        .hero-foto {
+            width: 400px;
+            height: 400px;
+            object-fit: cover;
+            border: 5px solid white;
+            border-radius: 50%;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+        
+        .hero-foto:hover {
+            transform: scale(1.05);
+            border-color: aquamarine;
+        }
+
+        .skills-area {
+            padding: 80px 50px;
+            background-color: white;
+            text-align: center;
+        }
+
+        .judul-section {
+            font-size: 50px;
+            color: rgb(35, 54, 62);
+            margin-bottom: 50px;
+        }
+
+        .wadah-skills {
+            display: flex;
+            justify-content: center;
+            gap: 45px;
+            flex-wrap: wrap;
+        }
+
+        .kartu-skill {
+            background-color: aliceblue;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            transition: 0.3s;
+        }
+
+        .kartu-skill img {
+            width: 80px;
+            margin-bottom: 10px;
+            transition: 0.3s;
+        }
+
+        .kartu-skill:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .kartu-skill:hover img {
+            transform: scale(1.1);
+        }
+
+        .projects-area {
+            background-color: aliceblue;
+            padding: 80px 50px;
+            text-align: center;
+        }
+
+        .wadah-projects {
+            display: flex;
+            justify-content: center;
+            gap: 45px;
+            flex-wrap: wrap;
+        }
+
+        .kartu-project {
+            background-color: white;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+            width: 375px;
+            text-align: left;
+            transition: 0.3s;
+        }
+
+        .kartu-project:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .kartu-project img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: 0.3s;
+        }
+
+        .isi-project {
+            padding: 25px;
+        }
+
+        .isi-project h3 {
+            color: rgb(31, 56, 63);
+            margin-bottom: 10px;
+        }
+
+        .isi-project p {
+            font-size: 14px;
+            color: rgb(35, 54, 62);
+            margin-bottom: 25px;
+        }
+
+        .btn-project {
+            display: inline-block;
+            background-color: aqua;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-project:hover {
+            background-color: rgb(0, 192, 255);
+        }
+
+        .contact-area {
+            background-color: white;
+            padding: 80px 50px;
+            text-align: center;
+        }
+
+        .wadah-contact {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .kartu-contact {
+            background-color: aliceblue;
+            padding: 25px 35px;
+            border: solid whitesmoke;
+            border-radius: 12px;
+            width: 250px;
+            text-align: center;
+            transition: 0.3;
+            display: inline-block;
+        }
+
+        .kartu-contact span {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: block;
+            color: rgb(35, 54, 62);
+        }
+
+        .kartu-contact p {
+            color: rgb(31, 56, 63);
+            font-size: 14px;
+        }
+
+        .kartu-contact:hover {
+            transform: translateY(-8px);
+            border-color: aqua;
+            box-shadow: 0 10px 20px rgba(46, 204, 113, 0.15);
+            background-color: white;
+        }
+        /* =========================================
+        JURUS RESPONSIVE UNTUK LAYAR HP 
+        ========================================= */
+        @media (max-width: 768px) {
+            
+            /* 1. Navbar ditumpuk ke bawah biar menu gak kegencet logo */
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px 20px;
+            }
+        
+            .menu {
+                gap: 15px; /* Jarak antar menu dideketin */
+                justify-content: center;
+            }
+
+            /* 2. Ukuran teks judul Hero dikecilin biar gak tumpah */
+            h1 {
+                font-size: 32px; 
+            }
+
+            /* 3. Padding (jarak dalam) di kiri-kanan semua kotak dikecilin */
+            section, .contact-area {
+                padding: 50px 20px; 
+            }
+
+            /* 4. Kartu Project dan Kontak dibikin ngisi penuh layar HP */
+            .kartu-project, .kartu-kontak {
+                width: 100%; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <h2 class="logo">RAKHAIRI</h2>
+        <ul class="menu">
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#skills">PENCAPAIAN</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </nav>
+    <header id="home" class="hero">
+        <div class="hero-teks">
+            <p>Halo, selamat datang! Gw</p>
+            <h1>RAKHAIRI</h1>
+            <h2>Siswa Lagi Belajar Bikin Web</h2>
+        </div>
+        <img src="https://i.pinimg.com/474x/93/44/40/93444022aabf9ab161e945c579417786.jpg" alt="Foto Profil Gw" class="hero-foto">
+    </header>
+    <section id="skills" class="skills-area">
+        <h2 class="judul-section">Pencapaian Gw</h2>
+        <div class="wadah-skills">
+            <div class="kartu-skill">
+                <img src="index/glory-icon.png" alt="Glory-Icon">
+                <h3>Glory</h3>
+            </div>
+            <div class="kartu-skill">
+                <img src="index/chess-icon.png" alt="Chess-Icon">
+                <h3>Elo-1000</h3>
+            </div>
+            <div class="kartu-skill">
+                <img src="index/vscode-icon.png" alt="VSCode-icon">
+                <h3>Coding Dasar</h3>
+            </div>
+        </div>
+    </section>
+    <section id="projects" class="projects-area">
+        <h2 class="judul-section">Projects</h2>
+        <div class="wadah-projects">
+            <div class="kartu-project">
+                <img src="index/project1.png" alt="Portofolio">
+                <div class="isi-project">
+                    <h3>Portofolio</h3>
+                    <p>Project pertama gw yang dibuat karena gw gabut saat pjj.</p>
+                    <a href="https://portofolio-rakhairi.netlify.app/" class="btn-project">Lihat Web</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="contact-area">
+        <h2 class="judul-section">Hubungi Gw</h2>
+        <div class="wadah-contact">
+            <a href="mailto:rakha7e.43@gmail.com" class="kartu-contact">
+                <span>Email</span>
+                <p>rakha7e.43@gmail.com</p>
+            </a>
+            <a href="https://wa.me/6285714400908" target="_blank" class="kartu-contact">
+                <span>WhatsApp</span>
+                <p>+62 857-1440-0908</p>
+            </a>
+            <a href="https://instagram.com/rakhairi_" target="_blank" class="kartu-contact">
+                <span>Instagram</span>
+                <p>rakhairi_</p>
+            </a>
+            <a href="https://tiktok.com/@rakhairi_" target="_blank" class="kartu-contact">
+                <span>TikiTiki</span>
+                <p>rakhairi_</p>
+            </a>
+        </div>
+    </section>
+</body>
+</html>
